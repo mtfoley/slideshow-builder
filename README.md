@@ -15,14 +15,15 @@ The image files can be portrait or landscape orientation and they'll be rescaled
 ## Usage
 
 ```shell
-$ ./slideshow-builder.sh UNSPLASH-TOPIC AUDIO_FILE.mp3
+$ ./slideshow-builder.sh MODE UNSPLASH-ITEM AUDIO_FILE.mp3
 ```
 
 ## Arguments
 
-* __UNSPLASH-TOPIC__ - The topic on Unsplash (e.g. nature) [Unsplash Nature Topic](https://unsplash.com/t/nature/)
+* __MODE__ - Either "topics" or "users"
+* __UNSPLASH-ITEM__ - Depending on `mode`, this is the topic on Unsplash (e.g. nature) [Unsplash Nature Topic](https://unsplash.com/t/nature/), or username of the person whose photos the slideshow should include.
 * __MP3INFO__ - The specified audio file to be used as background music. 
 
 # Side Effects
 
-Creates a folder named `FILE_UNSPLASH-TOPIC` and drops images and a copy of audio file into that folder for `FFMPEG` to pick up.
+Creates a folder named `FILE_{MODE}_{UNSPLASH-ITEM}` and downloads the images and a copy of audio file into that folder for `FFMPEG` to pick up from.
